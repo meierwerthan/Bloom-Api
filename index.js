@@ -14,7 +14,7 @@ configureServer(app);
 configureRoutes(app);
 
 
-app.listen(process.env.PORT, error => {
+app.listen(SERVER_CONFIGS.PORT, error => {
   if (error) throw error;
-  console.log('Server running on port: ' + process.env.PORT);
+  console.log('Server running on port: ' + SERVER_CONFIGS.PORT);
 });
