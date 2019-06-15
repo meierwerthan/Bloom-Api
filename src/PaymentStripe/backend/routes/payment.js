@@ -24,5 +24,4 @@ const paymentApi = app => { //Access the back-end
   return app;
 };
 
-
 module.exports = paymentApi;
