@@ -4,6 +4,7 @@ const cors = require('cors'); //use cors
 const bodyParser = require('body-parser'); //use body-parser (must also use this dependency)
 const express = require('express');
 const path = require('path');
+const favicon = require('express-favicon');
 
 const CORS_WHITELIST = require('./constants/frontend'); //use cors whitelist to avoid cors header authorization error (must also use this dependency)
 
@@ -26,6 +27,9 @@ const configureServer = app => { //configure the express server
   // app.use(allowCrossDomain)
   app.use(cors(corsOptions));
   app.use(bodyParser.json());
+  app.use(favicon(__dirname + '/build/favicon.ico'));
+  app.use(express.static(__dirname));
+  app.use(express.static(path.join(__dirname, 'build')));
 };
 
 module.exports = configureServer;
