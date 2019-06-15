@@ -2,6 +2,10 @@
 const stripe = require('../constants/stripe'); //Get stripe API
 
 const paymentApi = app => { //Access the back-end
+  app.get('/ping', function (req, res) {
+    return res.send('pong');
+   });
+   
   app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
