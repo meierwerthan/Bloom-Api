@@ -27,6 +27,7 @@ const configureServer = app => { //configure the express server
   // app.use(allowCrossDomain)
   app.use(cors(corsOptions));
   app.use(bodyParser.json());
+  
 };
 
 module.exports = configureServer;
